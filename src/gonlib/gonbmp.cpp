@@ -96,7 +96,23 @@ namespace gon {
         r = 255;
         drawpoint(50, 50);
 
-        std::ofstream file("test.bmp", std::ios::binary);
+        std::ofstream file("main.bmp", std::ios::binary);
+
+        if (!file) {
+            return false;
+        }
+        file.write(reinterpret_cast<const char*>(&head), sizeof(head));
+        file.write(reinterpret_cast<const char*>(data), imgsize);
+        file.close();
+        return true;
+    }
+    bool bmpfilecanvas::fexport(const char* t) {
+        head.filesize = imgsize + 54;
+
+        r = 255;
+        drawpoint(50, 50);
+
+        std::ofstream file(t, std::ios::binary);
 
         if (!file) {
             return false;

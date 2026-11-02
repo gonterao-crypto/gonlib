@@ -6,6 +6,7 @@ namespace gon {
             imgfilecanvas(int width, int height);
             virtual ~imgfilecanvas() = 0;
             virtual bool fexport() = 0;
+            virtual bool fexport(const char* t) = 0;
             int getpointindex(int x, int y);
             bool drawpoint(unsigned int x, unsigned int y);
             char setcolor(unsigned char r, unsigned char g, unsigned char b);
@@ -48,6 +49,7 @@ namespace gon {
             bmpfilecanvas(int width, int height);
             ~bmpfilecanvas() override;
             bool fexport() override final;
+            bool fexport(const char* t) override final;
         private:
             bmpheader head;
             int imgsize;

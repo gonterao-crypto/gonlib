@@ -50,6 +50,6 @@ int main() {
     gon::bmpfilecanvas canv(100,100);
     canv.setcolor(50,0,0);
     canv.drawline(0,0,50,50);
-    canv.fexport();
+    canv.fexport("aaa.bmp");
     return 0;
 }
