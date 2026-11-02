@@ -1,7 +1,9 @@
 #include <iostream>
-#include "gonlib/gonblock.hpp"
+// #include "gonlib/gonblock.hpp"
+#include "gonlib/gonbmp.hpp"
 
 int main() {
+    /*
     gon::backvector<int> a;
     a.push_back(2);
     a.push_back(4);
@@ -43,5 +45,11 @@ int main() {
         std::cout << b[i] << std::endl;
     }
     std::cout << "size: " << b.size() << std::endl;
+    */
+
+    gon::bmpfilecanvas canv(100,100);
+    canv.setcolor(50,0,0);
+    canv.drawline(0,0,50,50);
+    canv.fexport();
     return 0;
 }
