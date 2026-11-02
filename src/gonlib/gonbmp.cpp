@@ -23,7 +23,7 @@ namespace gon {
         if (x < 0 || x >= width) {
             return false;
         }
-        if (y < 0 || y >= width) {
+        if (y < 0 || y >= height) {
             return false;
         }
         unsigned int p = getpointindex(x, y);
