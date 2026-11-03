@@ -110,8 +110,11 @@ namespace gon {
         }
     }
     void imgfilecanvas::allpixelforloop(void (*func)(unsigned char& r, unsigned char& g, unsigned char& b, int x, int y)) {
-        for (int i = 0; i < width; ++i) {
-            for (int j = 0; j < height; ++j) {
+        rectinpixelforloop(0, 0, width, height, func);
+    }
+    void imgfilecanvas::rectinpixelforloop(int x1, int y1, int x2, int y2, void (*func)(unsigned char& r, unsigned char& g, unsigned char& b, int x, int y)) {
+        for (int i = x1; i < x2; ++i) {
+            for (int j = y1; j < y2; ++j) {
                 int index = getpointindex(i, j);
                 func(data[index + 2], data[index + 1], data[index], i, j);
             }

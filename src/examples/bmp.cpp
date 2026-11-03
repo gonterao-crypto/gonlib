@@ -7,10 +7,6 @@ void pixelloop(unsigned char& red, unsigned char& green, unsigned char& blue, in
     green = 255 - green;
     blue = 255 - blue;
     blue += (x % 255);
-void pixelloop(unsigned char& red, unsigned char& green, unsigned char& blue) {
-    red = 255 - red;
-    green = 255 - green;
-    blue = 255 - blue;
     return;
 }
 
@@ -20,7 +16,7 @@ void exa_bmp() {
         canv.setcolor(255,255,255);
         canv.drawline(0,0,100,100);
     } else {
-        canv.allpixelforloop(pixelloop);
+        canv.rectinpixelforloop(0, 0, 50, 50, pixelloop);
     }
 
     canv.fexport("aaa.bmp");
