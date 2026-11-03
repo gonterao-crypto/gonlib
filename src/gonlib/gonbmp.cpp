@@ -74,6 +74,28 @@ namespace gon {
         }
         return 0;
     }
+    int imgfilecanvas::getwidth() {
+        return width;
+    }
+    int imgfilecanvas::getheight() {
+        return height;
+    }
+    void imgfilecanvas::allpixelforloop(void (*func)(unsigned char& r, unsigned char& g, unsigned char& b)) {
+        for (int i = 0; i < width; ++i) {
+            for (int j = 0; j < height; ++j) {
+                int index = getpointindex(i, j);
+                func(data[index + 2], data[index + 1], data[index]);
+            }
+        }
+    }
+    void imgfilecanvas::allpixelforloop(void (*func)(unsigned char& r, unsigned char& g, unsigned char& b, int x, int y)) {
+        for (int i = 0; i < width; ++i) {
+            for (int j = 0; j < height; ++j) {
+                int index = getpointindex(i, j);
+                func(data[index + 2], data[index + 1], data[index], i, j);
+            }
+        }
+    }
 
 
 

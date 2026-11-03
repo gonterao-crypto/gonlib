@@ -11,6 +11,11 @@ namespace gon {
             bool drawpoint(unsigned int x, unsigned int y);
             char setcolor(unsigned char r, unsigned char g, unsigned char b);
             char drawline(unsigned int nx, unsigned int ny, unsigned int x, unsigned int y);
+            bool ishaninai(unsigned int x, unsigned int y);
+            int getwidth();
+            int getheight();
+            void allpixelforloop(void (*func)(unsigned char& r, unsigned char& g, unsigned char& b));
+            void allpixelforloop(void (*func)(unsigned char& r, unsigned char& g, unsigned char& b, int x, int y));
         protected:
             int linescan;
             int width, height;
