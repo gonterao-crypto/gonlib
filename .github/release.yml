@@ -7,6 +7,9 @@ changelog:
     authors:
       - octocat
   categories:
+    - title: 重大な変更
+      labels:
+        - judai
     - title: バグ修正
       labels:
         - bug
@@ -16,6 +19,6 @@ changelog:
     - title: 整理
       labels:
         - refactoring
-    - title: Other Changes
+    - title: そのほかの変更
       labels:
         - "*"
