@@ -27,6 +27,7 @@ void exa_block() {
     b.pop_back();
     b.pop_back();
     b.pop_back();
+    b.push_back(20.0f);
     for (int i = 0; i < b.size(); ++i) {
         std::cout << b[i] << std::endl;
     }

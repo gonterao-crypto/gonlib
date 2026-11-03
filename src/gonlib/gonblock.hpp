@@ -35,6 +35,7 @@ namespace gon {
                 if (k.umeta() == 0) {
                     delete blockptrs[blockc];
                     blockptrs[blockc] = nullptr;
+                    blockptrs.pop_back();
                 }
                 --nsize;
                 return;
