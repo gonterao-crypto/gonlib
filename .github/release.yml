@@ -1,0 +1,18 @@
+# .github/release.yml
+
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+    authors:
+      - octocat
+  categories:
+    - title: バグ修正
+      labels:
+        - bug
+    - title: 新機能
+      labels:
+        - enhancement
+    - title: Other Changes
+      labels:
+        - "*"
