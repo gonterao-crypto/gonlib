@@ -1,6 +1,7 @@
 #include <iostream>
 // #include "gonlib/gonblock.hpp"
-#include "gonlib/gonbmp.hpp"
+// #include "gonlib/gonbmp.hpp"
+#include "gonlib/gonlerp.hpp"
 
 int main() {
     /*
@@ -46,10 +47,14 @@ int main() {
     }
     std::cout << "size: " << b.size() << std::endl;
     */
-
+/*
     gon::bmpfilecanvas canv(100,100);
     canv.setcolor(50,0,0);
     canv.drawline(0,0,50,50);
     canv.fexport("aaa.bmp");
+*/
+    std::cout << "lerp: " << gon::lerp(0.0f, 1.0f, 0.5f) << std::endl;
+
     return 0;
+    
 }
