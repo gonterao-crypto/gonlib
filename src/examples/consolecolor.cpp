@@ -1,3 +1,4 @@
+// #define GONLIB_TYPO
 #include "block.hpp"
 #include "../gonlib/gonconsolecolor.hpp"
 #include <iostream>
@@ -7,9 +8,9 @@ void exa_consolecolor() {
     std::cout << gon::CCOLOR_RED << "red! " << std::endl;
     std::cout << gon::CCOLOR_BLUE << "blue! " << std::endl;
     std::cout << gon::CCOLOR_YELLOW << "yellow! " << std::endl;
-    std::cout << gon::CCOLOR_SYAN << "e";
+    std::cout << gon::CCOLOR_CYAN << "e";
     std::cout << gon::CCOLOR_GREEN << "t";
-    std::cout << gon::CCOLOR_MAZENDA << "c";
+    std::cout << gon::CCOLOR_MAGENTA << "c";
     std::cout << gon::CDECO_HIGH << gon::CCOLOR_BLUE << ".";
     std::cout << gon::CDECO_HIGH << gon::CCOLOR_RED << ".";
     std::cout << gon::CDECO_HIGH << gon::CCOLOR_GREEN << ".";
