@@ -106,8 +106,6 @@ namespace gon {
     bool bmpfilecanvas::fexport(const char* t) {
         head.filesize = imgsize + 54;
 
-        r = 255;
-        drawpoint(50, 50);
 
         std::ofstream file(t, std::ios::binary);
 
