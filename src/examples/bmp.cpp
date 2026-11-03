@@ -2,6 +2,11 @@
 #include "../gonlib/gonbmp.hpp"
 #include <iostream>
 
+void pixelloop(unsigned char& red, unsigned char& green, unsigned char& blue, int x, int y) {
+    red = 255 - red;
+    green = 255 - green;
+    blue = 255 - blue;
+    blue += (x % 255);
 void pixelloop(unsigned char& red, unsigned char& green, unsigned char& blue) {
     red = 255 - red;
     green = 255 - green;

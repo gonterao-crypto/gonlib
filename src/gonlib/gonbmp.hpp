@@ -18,6 +18,7 @@ namespace gon {
             int getwidth();
             int getheight();
             void allpixelforloop(void (*func)(unsigned char& r, unsigned char& g, unsigned char& b));
+            void allpixelforloop(void (*func)(unsigned char& r, unsigned char& g, unsigned char& b, int x, int y));
         protected:
             int linescan;
             int width, height;
