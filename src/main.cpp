@@ -1,59 +1,12 @@
-#include <iostream>
-// #include "gonlib/gonblock.hpp"
-// #include "gonlib/gonbmp.hpp"
-#include "gonlib/gonlerp.hpp"
+#include "examples/bmp.hpp"
+// #include "examples/block.hpp"
+// #include "examples/backvector.hpp"
+// #include "examples/lerp.hpp"
+// 使う場合はコメントを外してください
+// 関数名は　exa_○○　です
 
 int main() {
-    /*
-    gon::backvector<int> a;
-    a.push_back(2);
-    a.push_back(4);
-    a.push_back(6);
-    a.push_back(8);
-    for (int i = 0; i < a.size(); ++i) {
-        std::cout << a[i] << std::endl;
-    }
-    std::cout << "size: " << a.size() << " reverse:" << a.r_size() << std::endl;
-    a.push_back(8);
-    std::cout << "size: " << a.size() << " reverse:" << a.r_size() << std::endl;
-    std::cout << "ahahahah" << std::endl;
-
-
-    gon::blocks<float> b(10);
-    b.push_back(2.0f);
-    b.push_back(20.0f);
-    b.push_back(5.0f);
-    b.push_back(2.0f);
-    b.push_back(20.0f);
-    b.push_back(20.0f);
-    b.push_back(20.0f);
-    b.push_back(20.0f);
-    b.push_back(20.0f);
-    b.push_back(20.0f);
-    b.push_back(20.0f);
-    b.push_back(20.0f);
-    b.push_back(20.0f);
-    b.push_back(20.0f);
-    b.pop_back();
-    b.pop_back();
-    b.pop_back();
-    b.pop_back();
-    b.pop_back();
-    b.pop_back();
-    b.pop_back();
-    b.pop_back();
-    for (int i = 0; i < b.size(); ++i) {
-        std::cout << b[i] << std::endl;
-    }
-    std::cout << "size: " << b.size() << std::endl;
-    */
-/*
-    gon::bmpfilecanvas canv(100,100);
-    canv.setcolor(50,0,0);
-    canv.drawline(0,0,50,50);
-    canv.fexport("aaa.bmp");
-*/
-    std::cout << "lerp: " << gon::lerp(0.0f, 1.0f, 0.5f) << std::endl;
+    exa_bmp();
 
     return 0;
     
