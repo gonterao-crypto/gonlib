@@ -2,7 +2,7 @@
 #include "../gonlib/gonbmp.hpp"
 #include <iostream>
 
-void pixelloop(gon::imgfilecanvas& canv, unsigned char& red, unsigned char& green, unsigned char& blue, int x, int y) {
+void pixelloop(gon::imgfilecanvas& canv, unsigned char& red, unsigned char& green, unsigned char& blue, int x, int y, bool a) {
     red = 255 - red;
     green = 255 - green;
     blue = 255 - blue;
@@ -22,7 +22,7 @@ void exa_bmp() {
         canv.setcolor(255,255,255);
         canv.drawline(0,0,100,100);
     } else {
-        canv.rectinpixelforloop(0, 0, 50, 50, pixelloop);
+        canv.rectinpixelforloop(0, 0, 50, 50, pixelloop, true);
     }
 
     canv.fexport("aaa.bmp");
