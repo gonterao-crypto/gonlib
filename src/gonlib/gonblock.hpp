@@ -41,6 +41,10 @@ namespace gon {
                 return;
             }
 
+            T& back() {
+                return (*this)[nsize - 1];
+            }
+
             size_t size() {
                 return nsize;
             }
