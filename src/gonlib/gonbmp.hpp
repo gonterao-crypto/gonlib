@@ -7,8 +7,11 @@ namespace gon {
             virtual ~imgfilecanvas() = 0;
             virtual bool fexport() = 0;
             virtual bool fexport(const char* t) = 0;
+            virtual bool fimport(const char* t) = 0;
             int getpointindex(int x, int y);
             bool drawpoint(unsigned int x, unsigned int y);
+            bool setpixel(unsigned int x, unsigned int y, unsigned char r, unsigned char g, unsigned b);
+            bool getpixel(unsigned int x, unsigned int y, unsigned char& r, unsigned char& g, unsigned& b);
             char setcolor(unsigned char r, unsigned char g, unsigned char b);
             char drawline(unsigned int nx, unsigned int ny, unsigned int x, unsigned int y);
             bool ishaninai(unsigned int x, unsigned int y);
@@ -55,8 +58,9 @@ namespace gon {
             ~bmpfilecanvas() override;
             bool fexport() override final;
             bool fexport(const char* t) override final;
+            bool fimport(const char* t) override final;
+            int imgsize;
         private:
             bmpheader head;
-            int imgsize;
     };
 }

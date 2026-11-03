@@ -19,17 +19,37 @@ namespace gon {
     int imgfilecanvas::getpointindex(int x, int y) {
         return (y * linescan) + x * (bitcount / 8);
     }
-    bool imgfilecanvas::drawpoint(unsigned int x, unsigned int y) {
+    bool imgfilecanvas::ishaninai(unsigned int x, unsigned int y) {
         if (x < 0 || x >= width) {
             return false;
         }
         if (y < 0 || y >= height) {
             return false;
         }
+        return true;
+    }
+    bool imgfilecanvas::drawpoint(unsigned int x, unsigned int y) {
+        if (!ishaninai(x, y)) return false;
         unsigned int p = getpointindex(x, y);
         data[p] = b;
         data[p + 1] = g;
         data[p + 2] = r;
+        return true;
+    }
+    bool imgfilecanvas::setpixel(unsigned int x, unsigned int y, unsigned char r, unsigned char g, unsigned b) {
+        if (!ishaninai(x, y)) return false;
+        unsigned int p = getpointindex(x, y);
+        data[p] = b;
+        data[p + 1] = g;
+        data[p + 2] = r;
+        return true;
+    }
+    bool imgfilecanvas::getpixel(unsigned int x, unsigned int y, unsigned char& r, unsigned char& g, unsigned& b) {
+        if (!ishaninai(x, y)) return false;
+        unsigned int p = getpointindex(x, y);
+        b = data[p];
+        g = data[p + 1];
+        r = data[p + 2];
         return true;
     }
     char imgfilecanvas::setcolor(unsigned char r, unsigned char g, unsigned char b) {
@@ -40,6 +60,7 @@ namespace gon {
     }
     char imgfilecanvas::drawline(unsigned int nx, unsigned int ny, unsigned int x, unsigned int y) {
         y = height - y;
+        ny = height - ny;
         int dx = (x > nx) ? x - nx : nx - x;
         int dy = (y > ny) ? y - ny : ny - y;
 
@@ -99,6 +120,11 @@ namespace gon {
 
 
 
+
+
+
+
+    
     bmpfilecanvas::~bmpfilecanvas() {
         free(data);
     }
@@ -127,6 +153,7 @@ namespace gon {
     }
     bool bmpfilecanvas::fexport(const char* t) {
         head.filesize = imgsize + 54;
+        head.imgdatasize = imgsize;
 
 
         std::ofstream file(t, std::ios::binary);
@@ -136,6 +163,36 @@ namespace gon {
         }
         file.write(reinterpret_cast<const char*>(&head), sizeof(head));
         file.write(reinterpret_cast<const char*>(data), imgsize);
+        file.close();
+        return true;
+    }
+    bool bmpfilecanvas::fimport(const char* t) {
+        std::ifstream file(t, std::ios::binary);
+
+        if (!file) {
+            return false;
+        }
+        bmpheader tehead;
+        file.read(reinterpret_cast<char*>(&tehead), sizeof(tehead));
+        if (tehead.filetype != 0x4d42) {
+            return false;
+        }
+        if (tehead.pixelbit != 24) {
+            return false;
+        }
+        head = tehead;
+        width = head.width;
+        height = head.height;
+
+        linescan = ((head.pixelbit * width + 31) / 32) * 4;
+        bitcount = head.pixelbit;
+        imgsize = head.imgdatasize;
+        data = (unsigned char*)calloc(imgsize, sizeof(unsigned char));
+
+
+        file.seekg(head.imgdataoffset, std::ios::beg);
+        file.read(reinterpret_cast<char*>(data), imgsize * sizeof(unsigned char));
+
         file.close();
         return true;
     }
