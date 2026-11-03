@@ -45,7 +45,7 @@ namespace gon {
         data[p + 2] = r;
         return true;
     }
-    bool imgfilecanvas::getpixel(unsigned int x, unsigned int y, unsigned char& r, unsigned char& g, unsigned& b) {
+    bool imgfilecanvas::getpixel(unsigned int x, unsigned int y, unsigned char& r, unsigned char& g, unsigned char& b) {
         if (!ishaninai(x, y)) return false;
         unsigned int p = getpointindex(x, y);
         b = data[p];
@@ -102,18 +102,18 @@ namespace gon {
     int imgfilecanvas::getheight() {
         return height;
     }
-    void imgfilecanvas::allpixelforloop(void (*func)(unsigned char& r, unsigned char& g, unsigned char& b)) {
+    void imgfilecanvas::allpixelforloop(void (*func)(imgfilecanvas& canv, unsigned char& r, unsigned char& g, unsigned char& b)) {
         for (int i = 0; i < width; ++i) {
             for (int j = 0; j < height; ++j) {
                 int index = getpointindex(i, j);
-                func(data[index + 2], data[index + 1], data[index]);
+                func(*this, data[index + 2], data[index + 1], data[index]);
             }
         }
     }
-    void imgfilecanvas::allpixelforloop(void (*func)(unsigned char& r, unsigned char& g, unsigned char& b, int x, int y)) {
+    void imgfilecanvas::allpixelforloop(void (*func)(imgfilecanvas& canv, unsigned char& r, unsigned char& g, unsigned char& b, int x, int y)) {
         rectinpixelforloop(0, 0, width, height, func);
     }
-    void imgfilecanvas::rectinpixelforloop(int x1, int y1, int x2, int y2, void (*func)(unsigned char& r, unsigned char& g, unsigned char& b, int x, int y)) {
+    void imgfilecanvas::rectinpixelforloop(int x1, int y1, int x2, int y2, void (*func)(imgfilecanvas& canv, unsigned char& r, unsigned char& g, unsigned char& b, int x, int y)) {
         y1 = height - y1;
         y2 = height - y2;
         if (x1 > x2) {
@@ -129,7 +129,7 @@ namespace gon {
         for (int i = x1; i < x2; ++i) {
             for (int j = y1; j < y2; ++j) {
                 int index = getpointindex(i, j);
-                func(data[index + 2], data[index + 1], data[index], i, j);
+                func(*this, data[index + 2], data[index + 1], data[index], i, j);
             }
         }
     }
