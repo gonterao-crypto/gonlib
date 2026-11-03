@@ -6,6 +6,7 @@
 // 使う場合はコメントを外すこと
 // 関数名は　exa_○○　です
 
+
 int main() {
     exa_consolecolor();
 
