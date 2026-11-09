@@ -1,8 +1,8 @@
 // include "examples/bmp.hpp"
-// #include "examples/block.hpp"
+#include "examples/block.hpp"
 // #include "examples/blocklength.hpp"
 // #include "examples/math.hpp"
-#include "examples/backvector.hpp"
+// #include "examples/backvector.hpp"
 // #include "examples/lerp.hpp"
 // #include "examples/consolecolor.hpp"
 // 使う場合はコメントを外すこと
@@ -10,7 +10,7 @@
 
 
 int main() {
-    exa_backvector();
+    exa_block();
 
     return 0;
     

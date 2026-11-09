@@ -36,5 +36,9 @@ void exa_blocklength() {
     }
     std::cout << "size: " << b.size() << std::endl;
     std::cout << "last: " << b.back() << std::endl;
+    std::cout << "ite: " << std::endl;
+    for (auto& x : b) {
+        std::cout << x << std::endl;
+    }
     return;
 }
