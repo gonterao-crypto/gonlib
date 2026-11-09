@@ -8,7 +8,7 @@ C++のいくつかの機能が提供されるライブラリです。
 
 * コンパイラ、Clang++ C++26[^2]にて確認
 
-* (gonmake)
+* ([gonmakev2](https://github.com/gonterao-crypto/gonmakev2/releases))
 
 ## 解説
 
