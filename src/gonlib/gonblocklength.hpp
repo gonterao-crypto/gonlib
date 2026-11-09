@@ -73,11 +73,9 @@ namespace gon {
             
             class block {
                 public:
-                    block() : data(nullptr), ume(0) {
-                        data = new T[N];
+                    block() : data(), ume(0) {
                     }
                     ~block() {
-                        delete[] data;
                     }
 
                     T& push_back(const T& k) {
@@ -106,7 +104,7 @@ namespace gon {
                     }
                 private:
                     int ume;
-                    T* data;
+                    T data[N];
             };
 
             gon::backvector<block*> blockptrs;
