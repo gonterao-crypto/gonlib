@@ -15,5 +15,9 @@ void exa_backvector() {
     std::cout << "size: " << a.size() << " reverse:" << a.r_size() << std::endl;
     a.push_back(8);
     std::cout << "size: " << a.size() << " reverse:" << a.r_size() << std::endl;
+    std::cout << "ite: " << std::endl;
+    for (auto& x : a) {
+        std::cout  << x << std::endl;
+    }
     return;
 }

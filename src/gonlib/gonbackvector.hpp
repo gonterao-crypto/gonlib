@@ -1,5 +1,6 @@
 #pragma once
 #include "gonmemory.hpp"
+#include "goniteratortemplate.hpp"
 #include "gonutils.hpp"
 
 namespace gon {
@@ -54,6 +55,20 @@ namespace gon {
             size_t r_size() {
                 return reverse_size / sizeof(T);
             }
+
+            using iterator = base::iterator_base<T, backvector>;
+            iterator begin() {
+                iterator t(*this);
+                return t;
+            }
+            iterator end() {
+                iterator t(*this, nsize);
+                return t;
+            }
+
+
+
+
         private:
             size_t nsize = 0;
             size_t reverse_size = 0;
