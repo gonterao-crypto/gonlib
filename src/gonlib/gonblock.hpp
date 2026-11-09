@@ -1,5 +1,6 @@
 #pragma once
 #include "gonbackvector.hpp"
+#include "goniteratortemplate.hpp"
 
 namespace gon {
     template<typename T>
@@ -69,6 +70,18 @@ namespace gon {
                 int blocko = (n % blocksize);
                 return (*blockptrs[blockc])[blocko];
             }
+
+
+            using iterator = base::iterator_base<T, blocks>;
+            iterator begin() {
+                iterator t(*this);
+                return t;
+            }
+            iterator end() {
+                iterator t(*this, nsize);
+                return t;
+            }
+
         private:
             
             class block {
