@@ -1,6 +1,7 @@
 // include "examples/bmp.hpp"
 // #include "examples/block.hpp"
-#include "examples/math.hpp"
+#include "examples/blocklength.hpp"
+// #include "examples/math.hpp"
 // #include "examples/backvector.hpp"
 // #include "examples/lerp.hpp"
 // #include "examples/consolecolor.hpp"
@@ -9,7 +10,7 @@
 
 
 int main() {
-    exa_math();
+    exa_blocklength();
 
     return 0;
     
