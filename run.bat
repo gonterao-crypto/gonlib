@@ -1,8 +1,6 @@
-del /s /q program.exe
-
-gonmake -dir "./" -o "program.exe" -cu "--target=x86_64-w64-mingw32 -std=c++26 -O0 -fdiagnostics-absolute-paths -fcolor-diagnostics -fansi-escape-codes"
-if exist "program.exe" (
-  program
+gonmakev2 --gmakefile gmakefile.gmake --dir ./ --buildcommandecho --thread 2 --diff --outpath program.exe
+if not errorlevel 1 (
+  call runonly.bat
 ) else (
   echo Error!
 )
