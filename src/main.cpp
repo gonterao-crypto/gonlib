@@ -5,13 +5,14 @@
 // #include "examples/backvector.hpp"
 // #include "examples/lerp.hpp"
 // #include "examples/consolecolor.hpp"
-#include "examples/exception.hpp"
+// #include "examples/exception.hpp"
+#include "examples/fixedvector.hpp"
 // 使う場合はコメントを外すこと
 // 関数名は　exa_○○　です
 
 
 int main() {
-    exa_exception();
+    exa_fixedvector();
 
     return 0;
     
