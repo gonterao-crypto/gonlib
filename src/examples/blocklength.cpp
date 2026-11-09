@@ -1,0 +1,40 @@
+#include "block.hpp"
+#include "../gonlib/gonblocklength.hpp"
+#include <iostream>
+
+
+void exa_blocklength() {
+    gon::blocklengths<float, 10> b; // type, constexpr int
+    b.push_back(2.0f);
+    b.push_back(20.0f);
+    b.push_back(5.0f);
+    b.push_back(2.0f);
+    b.push_back(20.0f);
+    b.push_back(20.0f);
+    b.push_back(20.0f);
+    b.push_back(20.0f);
+    b.push_back(20.0f);
+    b.push_back(20.0f);
+    b.push_back(20.0f);
+    b.push_back(20.0f);
+    b.push_back(20.0f);
+    b.push_back(20.0f);
+    b.pop_back();
+    b.pop_back();
+    b.pop_back();
+    b.pop_back();
+    b.pop_back();
+    b.pop_back();
+    b.pop_back();
+    b.pop_back();
+    b.push_back(20.0f);
+    b.pop_back();
+    b.pop_back();
+    b.pop_back();
+    for (int i = 0; i < b.size(); ++i) {
+        std::cout << b[i] << std::endl;
+    }
+    std::cout << "size: " << b.size() << std::endl;
+    std::cout << "last: " << b.back() << std::endl;
+    return;
+}
