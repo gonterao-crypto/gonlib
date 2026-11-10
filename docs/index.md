@@ -1,6 +1,5 @@
 # gonlibドキュメント
 
-
 ## 目次
 
 #### 1. 各機能のドキュメント
@@ -9,3 +8,4 @@
 
 1. [gonmemory](module/gonmemory/index.md)
 2. [gonlerp](module/gonlerp/index.md)
+3. [gonutils](module/gonutils/index.md)
