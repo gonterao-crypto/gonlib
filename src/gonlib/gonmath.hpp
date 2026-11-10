@@ -3,6 +3,14 @@
 namespace gon {
     float sqrt(float value);
     double sqrt(double value);
+    
+    double abs(double value);
+    int abs(int value);
+    long abs(long value);
+    long long abs(long long value);
+    float abs(float value);
+    short abs(short value);
+    char abs(char value);
 
     template <typename T>
     class vector2d_t {
