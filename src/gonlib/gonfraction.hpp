@@ -201,7 +201,7 @@ namespace gon {
     using ffraction = base::fraction_base<float>;
     using dfraction = base::fraction_base<double>;
     using fraction = base::fraction_base<int>;
-    using lfraction = base::fraction_base<long long>;
+    using lfraction = base::fraction_base<long>;
     using cfraction = base::fraction_base<char>;
     using sfraction = base::fraction_base<short>;
     using llfraction = base::fraction_base<long long>;
