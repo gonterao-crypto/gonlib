@@ -19,6 +19,9 @@ changelog:
     - title: 整理
       labels:
         - refactoring
+    - title: ドキュメント
+      labels:
+        - documentation
     - title: そのほかの変更
       labels:
         - "*"
