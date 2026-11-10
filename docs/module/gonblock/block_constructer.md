@@ -14,4 +14,4 @@ sizeが一つのブロックの最大要素数になります。
 
 [モジュールへ戻る][back]
 
-[back]: index.md
+[back]: block.md

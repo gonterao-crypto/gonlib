@@ -4,7 +4,7 @@
 
 #### 1. 各機能のドキュメント
 
-> 注意：機能はすべてgon名前空間に閉じ込められている。
+> 注意：すべての機能はgon名前空間に閉じ込められています。
 
 1. [gonmemory](module/gonmemory/index.md)
 2. [gonlerp](module/gonlerp/index.md)
