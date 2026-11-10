@@ -65,7 +65,7 @@ namespace gon {
                 }
 
 
-                T getnumver() {
+                T getnumer() {
                     return numer;
                 }
                 T getdenom() {
@@ -138,7 +138,7 @@ namespace gon {
                     return fraction_base(num, lc);
                 }
                 friend const fraction_base& operator-(const fraction_base& a, const fraction_base& b) {
-                    return operator+(a, fraction_base(-b.numer, b.denom));
+                    return a + fraction_base(-b.numer, b.denom);
                 }
                 friend const fraction_base& operator*(const fraction_base& a, const fraction_base& b) {
                     T gc = fraction_base::gcd(a.numer, b.denom);
@@ -152,7 +152,7 @@ namespace gon {
                     return fraction_base(num, den);
                 }
                 friend const fraction_base& operator/(const fraction_base& a, const fraction_base& b) {
-                    return operator*(a, fraction_base(b.denom, b.numer));
+                    return a * fraction_base(b.denom, b.numer);
                 }
 
                 fraction_base& operator+=(const fraction_base& a) {
@@ -174,20 +174,20 @@ namespace gon {
                 fraction_base operator-() {
                     return fraction_base(-numer, denom);
                 }
-                fraction_base& fraction::operator++() {
+                fraction_base& operator++() {
                     return *this + 1;
                 }
-                fraction_base& fraction::operator--() {
+                fraction_base& operator--() {
                     return *this - 1;
                 }
                 
                 
-                fraction_base& fraction::operator++(int) {
+                fraction_base operator++(int) {
                     fraction_base tmp = *this;
                     *this += 1;
                     return tmp;
                 }
-                fraction_base& fraction::operator--(int) {
+                fraction_base operator--(int) {
                     fraction_base tmp = *this;
                     *this -= 1;
                     return tmp;
