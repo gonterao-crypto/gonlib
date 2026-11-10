@@ -10,5 +10,7 @@ void exa_fraction() {
     std::cout << b.getnumer() << '/' << b.getdenom() << std::endl;
     gon::fraction c(a + b);
     std::cout << '=' << c.getnumer() << '/' << c.getdenom() << std::endl;
+    c.normal();
+    std::cout << "normal: " << c.getnumer() << '/' << c.getdenom() << std::endl;
     return;
 }
