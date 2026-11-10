@@ -132,15 +132,15 @@ namespace gon {
                     return *this;
                 }
 
-                friend const fraction_base& operator+(const fraction_base& a, const fraction_base& b) {
+                friend fraction_base operator+(const fraction_base& a, const fraction_base& b) {
                     T lc = fraction_base::lcm(a.denom, b.denom);
-                    T num = a.numer * (lcm / a.denom) + b.numer * (lc / b.denom);
+                    T num = a.numer * (lc / a.denom) + b.numer * (lc / b.denom);
                     return fraction_base(num, lc);
                 }
-                friend const fraction_base& operator-(const fraction_base& a, const fraction_base& b) {
+                friend fraction_base operator-(const fraction_base& a, const fraction_base& b) {
                     return a + fraction_base(-b.numer, b.denom);
                 }
-                friend const fraction_base& operator*(const fraction_base& a, const fraction_base& b) {
+                friend fraction_base operator*(const fraction_base& a, const fraction_base& b) {
                     T gc = fraction_base::gcd(a.numer, b.denom);
                     T num = a.numer / gc;
                     T den = b.denom / gc;
@@ -151,7 +151,7 @@ namespace gon {
 
                     return fraction_base(num, den);
                 }
-                friend const fraction_base& operator/(const fraction_base& a, const fraction_base& b) {
+                friend fraction_base operator/(const fraction_base& a, const fraction_base& b) {
                     return a * fraction_base(b.denom, b.numer);
                 }
 
