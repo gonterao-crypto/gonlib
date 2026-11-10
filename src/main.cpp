@@ -7,13 +7,14 @@
 // #include "examples/consolecolor.hpp"
 // #include "examples/exception.hpp"
 // #include "examples/fixedvector.hpp"
-#include "examples/fixedvectorlength.hpp"
+// #include "examples/fixedvectorlength.hpp"
+#include "examples/fraction.hpp"
 // 使う場合はコメントを外すこと
 // 関数名は　exa_○○　です
 
 
 int main() {
-    exa_fixedvectorlength();
+    exa_fraction();
 
     return 0;
     
