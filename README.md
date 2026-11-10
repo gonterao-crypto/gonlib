@@ -40,6 +40,10 @@ C++のいくつかの機能が提供されるライブラリです。
 
 gonbackvectorとgonblocklengthと固定長配列を足して三で割ったようなものです。テンプレートの第二引数に配列の長さを入れます。もし追加するものが長さを超えてしまったら例外を排出します。
 
+### gonfixedvectorlength
+
+gonblocklengthのgonfixedvector版です。クラス内部に配列を保持するため、ヒープ領域を確保しませんが、代わりにクラス自体の大きさが大きくなる可能性があります。
+
 ### gonutils
 
 remove_refやmoveが提供されます
