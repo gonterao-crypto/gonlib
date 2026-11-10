@@ -5,9 +5,9 @@
 
 namespace gon {
     template <typename T, int N>
-    class fixedvector {
+    class fixedvectorlength {
         public:
-            fixedvector() : nsize(0), lastaccesindex(-1), data() {
+            fixedvectorlength() : nsize(0), lastaccesindex(-1), data() {
             }
 
 
@@ -15,21 +15,21 @@ namespace gon {
             T& operator[] (int j) {
                 if (N <= j || j < 0) {
                     lastaccesindex = j;
-                    throw gon::out_of_range("gon::fixedvector outofrange");
+                    throw gon::out_of_range("gon::fixedvectorlength outofrange");
                 }
                 return data[j];
             }
             T operator[] (int j) const {
                 if (N <= j || j < 0) {
                     lastaccesindex = j;
-                    throw gon::out_of_range("gon::fixedvector outofrange");
+                    throw gon::out_of_range("gon::fixedvectorlength outofrange");
                 }
                 return data[j];
             }
             void push_back(const T& h) {
                 if (nsize > N) {
                     lastaccesindex = nsize;
-                    throw gon::out_of_range("gon::fixedvector outofrange");
+                    throw gon::out_of_range("gon::fixedvectorlength outofrange");
                     return;
                 }
                 data[nsize] = h;
@@ -41,9 +41,7 @@ namespace gon {
             T& back() {
                 return data[nsize - 1];
             }
-            ~fixedvector() {
-                delete[] data;
-            }
+            ~fixedvectorlength() { }
             size_t size() {
                 return nsize;
             }
@@ -51,7 +49,7 @@ namespace gon {
                 return N;
             }
 
-            using iterator = base::iterator_base<T, fixedvector>;
+            using iterator = base::iterator_base<T, fixedvectorlength>;
             iterator begin() {
                 iterator t(*this);
                 return t;
