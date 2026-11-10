@@ -9,3 +9,4 @@
 1. [gonmemory](module/gonmemory/index.md)
 2. [gonlerp](module/gonlerp/index.md)
 3. [gonutils](module/gonutils/index.md)
+4. [gonblock](module/gonblock/index.md)
