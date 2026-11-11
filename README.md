@@ -64,6 +64,10 @@ bmp画像を操作するためのクラスを提供します。
 
 vector2dクラスやsqrt関数が使えます。
 
+### gonfraction
+
+分数のクラスを提供します。
+
 ### gonexception
 
 例外、throwを排出するときに使えるものです。現在はout_of_rangeしかありません。
