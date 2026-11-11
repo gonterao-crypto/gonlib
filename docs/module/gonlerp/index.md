@@ -1,4 +1,4 @@
-# 2. gonlerp
+# gonlerp
 
 [indexへ戻る][back]
 

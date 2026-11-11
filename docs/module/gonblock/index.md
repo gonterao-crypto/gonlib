@@ -1,4 +1,4 @@
-# 4. gonblock
+# gonblock
 
 [indexへ戻る][back]
 

@@ -6,7 +6,7 @@
 
 > 注意：すべての機能はgon名前空間に閉じ込められています。
 
-1. [gonmemory](module/gonmemory/index.md)
-2. [gonlerp](module/gonlerp/index.md)
-3. [gonutils](module/gonutils/index.md)
-4. [gonblock](module/gonblock/index.md)
+* [gonmemory](module/gonmemory/index.md)
+* [gonlerp](module/gonlerp/index.md)
+* [gonutils](module/gonutils/index.md)
+* [gonblock](module/gonblock/index.md)

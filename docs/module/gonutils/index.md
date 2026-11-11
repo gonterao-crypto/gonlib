@@ -1,4 +1,4 @@
-# 1. gonmemory
+# gonmemory
 
 [indexへ戻る][back]
 
