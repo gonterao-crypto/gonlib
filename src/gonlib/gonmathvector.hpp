@@ -53,7 +53,7 @@ namespace gon {
                     return (x * x) + (y * y);
                 }
                 T length() {
-                    return gon::math::sqrt(near_length());
+                    return gon::sqrt(near_length());
                 }
                 stype normalize() {
                     T leng = length();
@@ -116,7 +116,7 @@ namespace gon {
                     return (x * x) + (y * y) + (z * z);
                 }
                 T length() {
-                    return gon::math::sqrt(near_length());
+                    return gon::sqrt(near_length());
                 }
                 stype normalize() {
                     T leng = length();
@@ -125,7 +125,7 @@ namespace gon {
                     }
                     return {x / leng, y / leng, z / leng};
                 }
-            }
+            };
 
             template <typename T>
             struct vec<4, T> {
@@ -175,7 +175,7 @@ namespace gon {
                     return (x * x) + (y * y) + (z * z) + (w * w);
                 }
                 T length() {
-                    return gon::math::sqrt(near_length());
+                    return gon::sqrt(near_length());
                 }
                 stype normalize() {
                     T leng = length();
@@ -185,7 +185,7 @@ namespace gon {
                     return {x / leng, y / leng, z / leng, w / leng};
                 }
 #pragma pack(pop)
-            }
+            };
         }
         using vec2 = base::vec<2, float>;
         using vec3 = base::vec<3, float>;
