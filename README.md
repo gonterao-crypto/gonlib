@@ -64,7 +64,7 @@ bmp画像を操作するためのクラスを提供します。
 
 vector2dクラスやsqrt関数が使えます。
 
-### gonmath
+### gonmathvector
 
 m::vec2クラスやm::vec3、vec4クラスが使えます。
 
