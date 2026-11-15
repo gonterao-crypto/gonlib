@@ -25,6 +25,11 @@ namespace gon {
 
                 ~vec() = default;
 
+                
+                stype operator-() const {
+                    return stype(-x, -y);
+                }
+
                 friend stype operator+(const stype& a, const stype& b) {
                     return stype(a.x + b.x, a.y + b.y);
                 }
@@ -82,6 +87,10 @@ namespace gon {
                 }
 
                 ~vec() = default;
+
+                stype operator-() const {
+                    return stype(-x, -y, -z);
+                }
 
                 friend stype operator+(const stype& a, const stype& b) {
                     return stype(a.x + b.x, a.y + b.y, a.z + b.z);
@@ -148,6 +157,10 @@ namespace gon {
 
                 ~vec() = default;
 
+                stype operator-() const {
+                    return stype(-x, -y, -z, -w);
+                }
+
                 friend stype operator+(const stype& a, const stype& b) {
                     return stype(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w);
                 }
@@ -155,7 +168,7 @@ namespace gon {
                     return stype(a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w);
                 }
                 friend stype operator*(const stype& a, T b) {
-                    stype c(a.x, a.y, a.z);
+                    stype c(a.x, a.y, a.z, a.w);
                     c.x *= b;
                     c.y *= b;
                     c.z *= b;
@@ -180,7 +193,7 @@ namespace gon {
                 stype normalize() {
                     T leng = length();
                     if (leng == 0) {
-                        return {x, y, z};
+                        return {x, y, z, w};
                     }
                     return {x / leng, y / leng, z / leng, w / leng};
                 }
