@@ -1,5 +1,5 @@
 // #define GONLIB_TYPO
-#include "block.hpp"
+#include "consolecolor.hpp"
 #include "../gonlib/gonconsolecolor.hpp"
 #include <iostream>
 

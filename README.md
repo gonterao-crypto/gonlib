@@ -68,7 +68,6 @@ vector2dクラスやsqrt関数が使えます。
 
 m::vec2クラスやm::vec3、vec4クラスが使えます。
 
-
 ### gonfraction
 
 分数のクラスを提供します。

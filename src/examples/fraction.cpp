@@ -1,4 +1,4 @@
-#include "fixedvectorlength.hpp"
+#include "fraction.hpp"
 #include "../gonlib/gonfraction.hpp"
 #include <iostream>
 

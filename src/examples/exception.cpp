@@ -1,4 +1,3 @@
-// #define GONLIB_TYPO
 #include "exception.hpp"
 #include "../gonlib/gonexception.hpp"
 #include <iostream>
